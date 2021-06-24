@@ -60,3 +60,7 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Online Hostel Admission System
+
+This is a dynamic web application developed with laravel framework (php). The app has two ends; a front end which is in the form of a website where an applicant gets to explore the various hostels available with their respective components. The other end is the admin's dashboard where an admin can register a hostel and an agent of a particular hostel. Through access control mechanism (Role), the admin privileges are distinguished from that of the agents.
