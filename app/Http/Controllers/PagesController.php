@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Hostel;
 use App\Models\User;
 use App\Models\Contact;
 use Illuminate\Http\Request;
@@ -11,11 +12,19 @@ use Illuminate\Support\Facades\Auth;
 
 class PagesController extends Controller
 {
-
-
     public function index()
     {
         return view('user.home');
+    }
+
+    public function get_hostels()
+    {
+        return response()->json(Hostel::orderBy('id', 'DESC')->get());
+    }
+
+    public function get_categories(Request $request)
+    {
+        return response()->json(Category::orderBy('id', 'DESC')->where('hostel_id', $request->id)->get());
     }
 
     public function about()
@@ -66,8 +75,12 @@ class PagesController extends Controller
 
 
 
-    public function categories()
+    public function categories(Request $request)
     {
+        if ($request->hostel_id) {
+            $categories = Category::orderBy('id', 'DESC')->where('hostel_id', $request->hostel_id)->with('hostel')->get();
+            return response()->json($categories);
+        }
         $categories = Category::orderBy('id', 'DESC')->get();
         return response()->json($categories);
     }

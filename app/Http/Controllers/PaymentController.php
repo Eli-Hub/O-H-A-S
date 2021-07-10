@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Occupant;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Validator;
@@ -23,7 +24,7 @@ class PaymentController extends Controller
     {
 
         $v = Validator::make($request->all(), [
-            'hostel_name' => 'required|string|max:255',
+            'hostel_id' => 'required|string|max:255',
         ]);
         if ($v->fails()) {
             return response()->json(['status' => 'fail', 'error' => $v->errors()]);
@@ -37,6 +38,10 @@ class PaymentController extends Controller
         $payment->amount = $request->amount;
         $payment->pay_mode = $request->pay_mode;
 
+        $start_date = strtotime('+'.$request->duration.' years', strtotime(date('Y-m-d')));
+        $due_date = date('Y-m-d', $start_date);
+
+        $payment->due_date = $due_date;
 
         $payment->save();
         return redirect()->route('cpay');
@@ -49,7 +54,7 @@ class PaymentController extends Controller
     {
 
         $v = Validator::make($request->all(), [
-            'hostel_name' => 'required|string|max:255',
+            'hostel_id' => 'required|string|max:255',
         ]);
         if ($v->fails()) {
             return response()->json(['status' => 'fail', 'error' => $v->errors()]);

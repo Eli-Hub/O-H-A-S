@@ -101,6 +101,10 @@ class HomeController extends Controller
 
     }
 
+    public function calender()
+    {
+        return view('layouts.content.calender.calender');
+    }
 
     public function adminIndex()
     {

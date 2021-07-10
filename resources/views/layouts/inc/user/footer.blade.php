@@ -149,6 +149,7 @@
 
     <script src="{{asset('adminassets/js/main.js')}}"></script>
     <script src="{{asset('userassets/js/custom.js')}}"></script>
+    <script src="{{ asset('all/js/app.js') }}"></script>
 
     <!-- scrollUp JS
 		============================================ -->

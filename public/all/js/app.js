@@ -74,12 +74,58 @@ function deleteAlert(url, id) {
 
 
 
-
 /**** CATEGORY ****/
 
 //add new category
 
 $(document).ready(function() {
+    $('#hostels').change(function () {
+        let hostel_id = $(this).val()
+        $.ajax({
+            url: '/user/categories',
+            type: 'post',
+            dataType: 'json',
+            data: {hostel_id: hostel_id, _token: _token},
+            success: function (data) {
+                let category_id = $('#category_ids')
+                let toAppend = ``
+                $.each(data, function (k, v) {
+                    $('#hostel_name').val(v.hostel.hostel_name)
+                    toAppend += `<option value="${v.id}">${v.category_name}</option>`
+                })
+                category_id.empty().prepend(toAppend)
+            }
+        })
+    })
+
+    let category_id = $('#category_ids')
+    category_id.change(function () {
+        let id = $(this).val()
+        $.ajax({
+            url: '/user/category',
+            type: 'post',
+            data: {id: id, _token: _token},
+            success: function (data) {
+                if (data) {
+                    $.each(data, function (k, v) {
+                        $('#'+k).val(v)
+                    })
+                }
+            }
+        })
+    })
+
+    $.ajax({
+        url: '/user/hostel',
+        type: 'get',
+        dataType: 'json',
+        success: function (data) {
+            let hostels = $('#hostels')
+            $.each(data, function (k,v) {
+                hostels.append(`<option value="${v.id}">${v.hostel_name}</option>`)
+            })
+        }
+    })
 
     $.ajax({
         url: '/admin/hostel/categories',

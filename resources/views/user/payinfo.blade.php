@@ -73,7 +73,7 @@
 
 
               <div class="col-md-10">
-                <form action="{{route('payInfo')}}" method='POST'>
+                <form action="{{route('payInfo')}}" method='POST' enctype="multipart/form-data">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                     <div class="row" style="align:center">
@@ -90,16 +90,15 @@
                         </div>
                         <div class="col-md-6 mb-3"><span style="font-size: 12px">Hostel</span>
                             <div class="form-group">
-                                <select name="hostel_name" type="text" class="form-control" required>
+                                <select name="hostel_id" id="hostels" type="text" class="form-control" required>
                                     <option value="">Select Hostel </option>
-                                    <option value="Freedom Hostel">Freedom Hostel</option>
-
                                 </select>
+                                <input type="hidden" id="hostel_name" name="hostel_name">
                             </div>
                         </div>
                         <div class="col-md-6 mb-3"><span style="font-size: 12px">Room Category</span>
                             <div class="form-group">
-                                <select name="category" id="category_id" type="text" class="form-control" required>
+                                <select name="category" id="category_ids" type="text" class="form-control" required>
                                     <option value="">Select Category </option>
                                 </select>
                             </div>

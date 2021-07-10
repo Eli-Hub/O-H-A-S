@@ -56,7 +56,20 @@
     <script src="{{ asset('all/app-assets/js/scripts/forms/select/form-select2.js') }}"></script>
     <!-- END: Page JS-->
     <input type="hidden" id="base_url" value="{{ url('/') }}"/>
+
+    <!-- BEGIN: Page JS-->
+    <script src="{{asset('all/app-assets/js/scripts/extensions/fullcalendar.js')}}"></script>
+    <!-- END: Page JS-->
+    <!-- BEGIN: Page Vendor JS-->
+    <script src="{{asset('all/app-assets/vendors/js/extensions/moment.min.js')}}"></script>
+    <script src="{{asset('all/app-assets/vendors/js/calendar/fullcalendar.min.js')}}"></script>
+    <script src="{{asset('all/app-assets/vendors/js/calendar/extensions/daygrid.min.js')}}"></script>
+    <script src="{{asset('all/app-assets/vendors/js/calendar/extensions/timegrid.min.js')}}"></script>
+    <script src="{{asset('all/app-assets/vendors/js/calendar/extensions/interactions.min.js')}}"></script>
+    <script src="{{asset('all/app-assets/vendors/js/pickers/pickadate/picker.js')}}"></script>
+    <script src="{{asset('all/app-assets/vendors/js/pickers/pickadate/picker.date.js')}}"></script>
+    <!-- END: Page Vendor JS-->
+
 </body>
 <!-- END: Body-->
-
 </html>

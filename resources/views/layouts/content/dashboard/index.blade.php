@@ -50,13 +50,13 @@
                                                     }
                                                     ?>
                                                 {{ Auth::user()->name }}</h1>
-                                            <p class="m-auto w-75"><strong>How are you doing?</strong></p>
+                                            <p class="m-auto w-75"><strong>What do you want to explore?</strong></p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                     
+
                         <div class="col-lg-6 col-md-8 col-sm-12 md-5">
                             <div class="card">
                                 <div class="card-header d-flex justify-content-between pb-0">
@@ -77,7 +77,7 @@
                                         <div class="row">
                                             <div class="col-sm-2 col-6 d-flex flex-column flex-wrap text-center">
                                                 <h1 class="font-large-2 text-bold-700 mt-2 mb-0">32</h1>
-                                                <small>Rooms Available</small>
+                                                <small>Hostels Available</small>
                                             </div>
                                             <div class="col-sm-10 col-12 d-flex justify-content-center">
                                                 <div id="support-tracker-chart"></div>
@@ -100,7 +100,7 @@
                                         </div>
                                     </div>
                                     <h2 class="text-bold-700 mt-1 mb-25">234</h2>
-                                    <p class="mb-0">Occupants In Hostel</p>
+                                    <p class="mb-0">Hostels Added to System</p>
                                 </div>
                                 <div class="card-content">
                                     <div id="subscribe-gain-chart"></div>
@@ -232,8 +232,8 @@
                             </div>
                         </div>
                         @endif
-                       
-           
+
+
                 </section>
                 <!-- Dashboard Analytics end -->
             </div>

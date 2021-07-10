@@ -9,8 +9,8 @@
     <meta name="keywords" content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="PIXINVENT">
     <title>@yield('title') - OHAS</title>
-    <link rel="apple-touch-icon" href="{{ asset('all/app-assets/images/ico/apple-icon-120.png') }}">
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('all/app-assets/images/ico/favicon.ico') }}">
+    <link rel="apple-touch-icon" href="{{ asset('all/app-assets/images/logo/lg1.png') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('all/app-assets/images/logo/lg1.png') }}">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600" rel="stylesheet">
 
     <!-- BEGIN: Vendor CSS-->
@@ -47,6 +47,19 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('all/assets/css/style.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('all/js/jquery.fancybox.min.css') }}">
     <!-- END: Custom CSS-->
+
+    <!-- BEGIN: Vendor CSS-->
+    <link rel="stylesheet" type="text/css" href="{{asset ('all/app-assets/vendors/css/vendors.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset ('all/app-assets/vendors/css/calendars/fullcalendar.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset ('all/app-assets/vendors/css/calendars/extensions/daygrid.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset ('all/app-assets/vendors/css/calendars/extensions/timegrid.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset ('all/app-assets/vendors/css/pickers/pickadate/pickadate.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset ('all/app-assets/css/core/menu/menu-types/vertical-menu.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset ('all/app-assets/css/core/colors/palette-gradient.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset ('all/app-assets/css/plugins/calendars/fullcalendar.css')}}">
+
+    <!-- END: Vendor CSS-->
+
 
 </head>
 <!-- END: Head-->

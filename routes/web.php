@@ -10,7 +10,6 @@ use App\Http\Controllers\HostelController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\OccupantController;
-use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\CategoryController;
 
@@ -41,7 +40,9 @@ Route::get('/sproperty', [PagesController::class, 'singleproperty'])->name('spro
 Route::get('user/payment', [PagesController::class, 'makepay'])->name('userpay');
 Route::get('user/infopayment', [PagesController::class, 'paymentinfo'])->name('infopay');
 Route::get('user/cpayment', [PagesController::class, 'completepay'])->name('cpay');
-Route::get('user/categories', [PagesController::class, 'categories']);
+Route::post('user/categories', [PagesController::class, 'categories']);
+Route::post('user/get_categories', [PagesController::class, 'get_categories']);
+Route::get('user/hostel', [PagesController::class, 'get_hostels']);
 Route::post('user/category', [PagesController::class, 'category']);
 
 
@@ -67,8 +68,8 @@ Route::get('admin/addagent', [HomeController::class, 'addagent'])->name('addagen
 Route::get('admin/hostellist', [HomeController::class, 'hostellist'])->name('hostellist');
 Route::get('admin/agentlist', [HomeController::class, 'agentlist'])->name('agentlist');
 Route::get('admin/profile', [HomeController::class, 'adminprofile'])->name('profile');
-
 Route::get('admin/subscribes', [HomeController::class, 'subscribe'])->name('sub');
+Route::get('admin/calender', [HomeController::class, 'calender'])->name('calender');
 Route::get('admin/contact/delete/{id}', [ContactController::class, 'destroy'])->name('contact.destroy');
 
 //category pages
@@ -115,32 +116,6 @@ Route::delete('admin/occupants/delete/{id}', [OccupantController::class, 'destro
 
 
 
-
-
-// Route::post('admin/addagent/new', [AgentController::class, 'create'])->name('agent.create');
-// Route::post('admin/addhostel', [HostelController::class, 'create'])->name('hostel.create');
-// Route::post('admin/addpayment', [PaymentController::class, 'create'])->name('pay.create');
-// Route::post('admin/addoccupant', [OccupantController::class, 'create'])->name('occu.create');
-
-
-
-// Route::post('admin/agentlist/{id}', [AgentController::class, 'update'])->name('agent.update');
-// Route::post('admin/hostellist/{id}', [HostelController::class, 'update'])->name('hostel.update');
-// Route::post('admin/payments/{id}', [PaymentController::class, 'update'])->name('pay.update');
-// Route::post('admin/occupants/{id}', [OccupantController::class, 'update'])->name('occu.update');
-
-
-
-// Route::get('admin/agent/delete/{id}', [AgentController::class, 'delete'])->name('agent.delete');
-// Route::get('admin/host/delete/{id}', [HostelController::class, 'delete'])->name('h.delete');
-// Route::get('admin/pay/delete/{id}', [PaymentController::class, 'delete'])->name('pay.delete');
-// Route::get('admin/occu/delete/{id}', [OccupantController::class, 'delete'])->name('occu.delete');
-
-
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
-// Route::get('/', [LoginController::class, 'showLoginForm'])->name('login');
-// Route::post('/', [LoginController::class, 'login'])->name('login');
-// Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
-// Route::post('/admin', [RegisterController::class, 'register'])->name('register');
-// Route::get('/logout', [RegisterController::class, 'logout'])->name('logout');
+
