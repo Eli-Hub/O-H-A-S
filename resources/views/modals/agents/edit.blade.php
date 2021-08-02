@@ -31,15 +31,18 @@
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                         <div class="form-group"><span style="font-size: 10px">Gender</span>
                                            <select class="form-control custom-select-value" name="gender" type="text" id="e_gender" >
-                                                <option>Male</option>
-                                                <option>Female</option>
+                                               <option value="">Select Gender</option>
+                                               <option value="Male">Male</option>
+                                               <option value="Female">Female</option>
                                             </select>
                                         </div>
                                         <div class="form-group"> <span style="font-size: 10px">Date of Birth</span>
                                             <input name="DOB" id="e_DOB" type="text" class="form-control">
                                         </div>
-                                        <div class="form-group"> <span style="font-size: 10px">Hostel Name</span>
-                                            <input name="hostel_name" id="e_hostel_name" type="text" class="form-control">
+                                        <div class="form-group"><span style="font-size: 10px">Hostel Name</span>
+                                            <select name="hostel_name" id="e_hostel_name" class="form-control custom-select-value">
+                                                <option value="">Select Hostel</option>
+                                            </select>
                                         </div>
                                         <div class="form-group"><span>Upload Picture of Agent </span>
                                             <div class="form-group">

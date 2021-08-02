@@ -32,7 +32,7 @@ Auth::routes();
 
 Route::get('/', [PagesController::class, 'index'])->name('index');
 Route::get('/about', [PagesController::class, 'about'])->name('about');
-Route::get('/agentgrid', [PagesController::class, 'age'])->name('agentg');
+Route::get('/agentgrid', [PagesController::class, 'agentgrid'])->name('agentg');
 Route::get('/agentsingle', [PagesController::class, 'agentsingle'])->name('agents');
 Route::get('/contact', [PagesController::class, 'contact'])->name('contact');
 Route::get('/property', [PagesController::class, 'property'])->name('prop');
@@ -69,8 +69,12 @@ Route::get('admin/hostellist', [HomeController::class, 'hostellist'])->name('hos
 Route::get('admin/agentlist', [HomeController::class, 'agentlist'])->name('agentlist');
 Route::get('admin/profile', [HomeController::class, 'adminprofile'])->name('profile');
 Route::get('admin/subscribes', [HomeController::class, 'subscribe'])->name('sub');
+Route::get('admin/messages', [HomeController::class, 'message'])->name('message');
 Route::get('admin/calender', [HomeController::class, 'calender'])->name('calender');
+
+//Delete Messages
 Route::get('admin/contact/delete/{id}', [ContactController::class, 'destroy'])->name('contact.destroy');
+Route::get('admin/message/delete/{id}', [MessageController::class, 'destroy'])->name('message.destroy');
 
 //category pages
 Route::get('admin/category', [CategoryController::class, 'index'])->name('category');
@@ -85,6 +89,7 @@ Route::delete('admin/delete/{id}', [CategoryController::class, 'destroy'])->name
 Route::get('admin/agent', [AgentController::class, 'index'])->name('adminagent');
 Route::post('admin/agent/create', [AgentController::class, 'create'])->name('adminagent.create');
 Route::get('admin/agents', [AgentController::class, 'agents']);
+Route::get('admin/allagents', [AgentController::class, 'all_agents']);
 Route::post('admin/agentid', [AgentController::class, 'agent']);
 Route::post('admin/agent/update', [AgentController::class, 'update'])->name('agent.update');
 Route::delete('admin/agent/delete/{id}', [AgentController::class, 'destroy'])->name('agent.destroy');
@@ -101,17 +106,19 @@ Route::get('admin/hostel/categories', [HostelController::class, 'categories']);
 
 
 //Payment pages
-Route::get('admin/payment', [PaymentController::class, 'index'])->name('pay');
+Route::get('admin/payment', [PaymentController::class, 'index'])->name('adminpay');
 Route::get('admin/payments', [PaymentController::class, 'payments']);
 Route::post('admin/paymentid', [PaymentController::class, 'payment']);
 Route::delete('admin/payments/delete/{id}', [PaymentController::class, 'destroy'])->name('pay.destroy');
-
+// Payment API
+Route::post('/pay', [App\Http\Controllers\PaymentController::class, 'redirectToGateway'])->name('pay');
+Route::get('/payments/payment/callback', [App\Http\Controllers\PaymentController::class, 'handleGatewayCallback']);
 
 //Occupants pages
 Route::get('admin/occupant', [OccupantController::class, 'index'])->name('occupant');
 Route::get('admin/occupants', [OccupantController::class, 'occupants']);
 Route::post('admin/occupantid', [OccupantController::class, 'occupant']);
-// Route::post('admin/occupant/update', [OccupantController::class, 'update'])->name('occupant.update');
+Route::post('admin/occupant/update', [OccupantController::class, 'update'])->name('occupant.update');
 Route::delete('admin/occupants/delete/{id}', [OccupantController::class, 'destroy'])->name('occupant.destroy');
 
 

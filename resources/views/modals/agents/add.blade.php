@@ -14,47 +14,39 @@
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="form-group">
+                                <div class="form-group"><span style="font-size: 10px"> Agent Name </span>
                                     <input name="agent_name" type="text" class="form-control" placeholder="Full Name">
                                 </div>
 
-                                <div class="form-group">
+                                <div class="form-group"> <span style="font-size: 10px"> Phone </span>
                                     <input name="phone" type="number" class="form-control" placeholder="Mobile no.">
                                 </div>
 
                                 <div class="form-group">
-                                    <span>Date of Birth</span>
+                                    <span style="font-size: 10px"> Date of Birth </span>
                                     <input name="DOB"  type="date" class="form-control">
                                 </div>
-                                <div class="form-group">
-                                    <select name="gender" class="form-control">
-                                        <option value="none" selected="" disabled="">Select Gender</option>
-                                        <option value="male">Male</option>
-                                        <option value="female">Female</option>
+                                <div class="form-group"><span style="font-size: 10px"> Gender </span>
+                                    <select name="gender" id="gender" class="form-control">
+                                        <option value="">Select Gender</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="form-group">
-                                    <select name="hostel_name" class="form-control">
+                                <div class="form-group"> <span style="font-size: 10px"> Hostel </span>
+                                    <select name="hostel_name" id="hostel_id" class="form-control">
                                         <option value="none" selected="" disabled="">Select Hostel</option>
-                                        <option value="Freedom Hostel">Freedom Hostel</option>
-                                        <option value="5 Star Hostel">5 Star Hostel</option>
-                                        <option value="Adaklu Hostel">Adaklu Hostel</option>
-                                        <option value="Shama Hostel">Shama Hostel</option>
                                     </select>
                                 </div>
 
-                                <div class="form-group">
-                                    <input name="hostel_id" type="text" class="form-control" placeholder="Hostel ID">
-                                </div>
-                                <div class="form-group">
+                                <div class="form-group"> <span style="font-size: 10px"> Email </span>
                                     <input name="email" type="text" class="form-control" placeholder="Email">
                                 </div>
 
                                 <div class="form-group">
                                     <span>Upload Picture of Agent </span>
-
                                         <div class="form-group">
                                             <input class=" form-control" type="file" name="picture" id="picture_1">
                                         </div>

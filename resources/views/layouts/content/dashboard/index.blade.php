@@ -7,7 +7,7 @@
         <div class="content-header row"></div>
             <div class="content-body">
                 <!-- Dashboard Analytics Start -->
-                <section id="dashboard-analytics">
+                <div id="dashboard-analytics">
                     <div class="row">
                         <div class="col-lg-6 col-md-12 col-sm-12">
                             <div class="card bg-analytics text-white">
@@ -56,7 +56,7 @@
                                 </div>
                             </div>
                         </div>
-
+                        @if(Auth::user()->is_admin==1)
                         <div class="col-lg-6 col-md-8 col-sm-12 md-5">
                             <div class="card">
                                 <div class="card-header d-flex justify-content-between pb-0">
@@ -87,45 +87,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="row">
-
-                        <div class="col-lg-3 col-md-6 col-12">
-                            <div class="card">
-                                <div class="card-header d-flex flex-column align-items-start pb-0">
-                                    <div class="avatar bg-rgba-primary p-50 m-0">
-                                        <div class="avatar-content">
-                                            <i class="feather icon-users text-primary font-medium-5"></i>
-                                        </div>
-                                    </div>
-                                    <h2 class="text-bold-700 mt-1 mb-25">234</h2>
-                                    <p class="mb-0">Hostels Added to System</p>
-                                </div>
-                                <div class="card-content">
-                                    <div id="subscribe-gain-chart"></div>
-                                </div>
-                            </div>
                         </div>
-
-                        <div class="col-lg-3 col-md-6 col-12">
-                            <div class="card">
-                                <div class="card-header d-flex flex-column align-items-start pb-0">
-                                    <div class="avatar bg-rgba-warning p-50 m-0">
-                                        <div class="avatar-content">
-                                            <i class="feather icon-package text-warning font-medium-5"></i>
-                                        </div>
-                                    </div>
-                                    <h2 class="text-bold-700 mt-1 mb-25">GH¢ 247</h2>
-                                    <p class="mb-0">Total Payments Made</p>
-                                </div>
-                                <div class="card-content">
-                                    <div id="orders-received-chart"></div>
-                                </div>
-                            </div>
-                        </div>
-                        @if (Auth::user()->is_admin==0)
-                         <div class="col-md-6 col-12">
+                        @else
+                        <div class="col-md-6 col-12">
                             <div class="card">
                                 <div class="card-content">
                                     <div class="card-body">
@@ -186,7 +150,44 @@
                                 </div>
                             </div>
                         </div>
-                        @else
+                </div>
+                    @endif
+                    <div class="row">
+
+                        <div class="col-lg-3 col-md-6 col-12">
+                            <div class="card">
+                                <div class="card-header d-flex flex-column align-items-start pb-0">
+                                    <div class="avatar bg-rgba-primary p-50 m-0">
+                                        <div class="avatar-content">
+                                            <i class="feather icon-users text-primary font-medium-5"></i>
+                                        </div>
+                                    </div>
+                                    <h2 class="text-bold-700 mt-1 mb-25">234</h2>
+                                    <p class="mb-0">Hostels Added to System</p>
+                                </div>
+                                <div class="card-content">
+                                    <div id="subscribe-gain-chart"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 col-12">
+                            <div class="card">
+                                <div class="card-header d-flex flex-column align-items-start pb-0">
+                                    <div class="avatar bg-rgba-warning p-50 m-0">
+                                        <div class="avatar-content">
+                                            <i class="feather icon-package text-warning font-medium-5"></i>
+                                        </div>
+                                    </div>
+                                    <h2 class="text-bold-700 mt-1 mb-25">GH¢ 247</h2>
+                                    <p class="mb-0">Total Payments Made</p>
+                                </div>
+                                <div class="card-content">
+                                    <div id="orders-received-chart"></div>
+                                </div>
+                            </div>
+                        </div>
+                        @if (Auth::user()->is_admin==1)
                         <div class="col-md-6 col-12">
                             <div class="card">
                                 <div class="card-header d-flex justify-content-between pb-0">
@@ -231,9 +232,8 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
                         @endif
-
-
                 </section>
                 <!-- Dashboard Analytics end -->
             </div>

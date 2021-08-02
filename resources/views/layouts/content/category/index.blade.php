@@ -5,7 +5,7 @@
 @section('content')
 
 @include('modals.category.add')
-@include('modals.category.view')
+{{--@include('modals.category.view')--}}
 @include('modals.category.edit')
 
         <div class="content-wrapper">

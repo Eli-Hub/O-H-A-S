@@ -30,7 +30,6 @@ class HostelController extends Controller
 
         $hostel = new Hostel();
         $hostel->hostel_name = $request->hostel_name;
-        $hostel->hostel_id = $request->hostel_id;
         $hostel->hostel_type = $request->hostel_type;
         $hostel->location = $request->location;
         $hostel->agent = $request->agent;
@@ -63,7 +62,6 @@ class HostelController extends Controller
     {
         $v = Validator::make($request->all(), [
             'hostel_name' => 'required|string|max:255',
-            'picture' => 'required|mimes:jpg,jpeg,svg,png,gif'
         ]);
         if ($v->fails()) {
             return response()->json(['status' => 'fail', 'error' => $v->errors()]);
@@ -71,7 +69,6 @@ class HostelController extends Controller
 
         $hostel = Hostel::find($request->id);
         $hostel->hostel_name = $request->hostel_name;
-        $hostel->hostel_id = $request->hostel_id;
         $hostel->hostel_type = $request->hostel_type;
         $hostel->location = $request->location;
         $hostel->agent = $request->agent;
@@ -86,6 +83,12 @@ class HostelController extends Controller
 
 
         if ($request->hasFile('picture')) {
+            $v = Validator::make($request->all(), [
+                'picture' => 'mimes:jpg,jpeg,svg,png,gif'
+            ]);
+            if ($v->fails()) {
+                return response()->json(['status' => 'fail', 'error' => $v->errors()]);
+            }
             $file = $request->file('picture');
             $ext = $file->getClientOriginalExtension();
             $filename = time() . '.' . $ext;

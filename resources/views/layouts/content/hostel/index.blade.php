@@ -58,11 +58,10 @@
                                                     <tr>
                                                         <th>ID</th>
                                                         <th>Image</th>
-                                                        <th>Hostel ID</th>
                                                         <th>Hostel Name</th>
                                                         <th>Location</th>
                                                         <th>Hostel Type</th>
-                                                        <th>Agent</th>
+                                                        <th>Agent ID</th>
                                                         <th>Action</th>
                                                     </tr>
                                                 </thead>
@@ -71,11 +70,10 @@
                                                     <tr>
                                                           <th>ID</th>
                                                          <th>Image</th>
-                                                        <th>Hostel ID</th>
                                                         <th>Hostel Name</th>
                                                         <th>Location</th>
                                                         <th>Hostel Type</th>
-                                                        <th>Agent</th>
+                                                        <th>Agent ID</th>
                                                         <th>Action</th>
                                                     </tr>
                                                 </tfoot>

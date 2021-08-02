@@ -40,33 +40,23 @@
                                 <span id="v_residence"></span>
                             </div>
                         </div>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <strong for="v_category">Category:</strong>
-                                <span id="v_category"></span>
-                            </div>
-                        </div>
+
                       </div>
 
                          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <strong for="v_parent">Guardian:</strong>
-                                <span id="v_parent"></span>
+                                <strong for="v_guardian">Guardian:</strong>
+                                <span id="v_guardian"></span>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <strong for="v_phone_parent">Guardian Phone:</strong>
-                                <span id="v_phone_parent"></span>
+                                <strong for="v_guard_phone">Guardian Phone:</strong>
+                                <span id="v_guard_phone"></span>
                             </div>
                         </div>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <strong for="v_duration">Duration:</strong>
-                                <span id="v_duration"></span> year(s)
-                            </div>
-                        </div>
+
                         <div class="col-md-12">
                             <div class="form-group">
                                 <strong for="v_sch_name">School:</strong>

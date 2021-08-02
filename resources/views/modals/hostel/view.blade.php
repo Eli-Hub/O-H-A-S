@@ -64,7 +64,14 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="v_status">Status:</label>
-                                <span id="v_status"></span>
+                                <span id="v_status"><?php
+
+                                    if ('1')
+                                        echo "Available";
+                                    else
+                                        echo "Unavailable";
+                                    ?>
+                                </span>
                             </div>
                         </div>
                         </div>

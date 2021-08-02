@@ -73,61 +73,69 @@
 
 
               <div class="col-md-10">
-                <form action="{{route('payInfo')}}" method='POST' enctype="multipart/form-data">
-                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-                    <div class="row" style="align:center">
+                  <form method="POST" action="{{ route('pay') }}" accept-charset="UTF-8" class="form-horizontal" role="form">
+                      @csrf
 
-                        <div class="icon-box">
-                            <div class="icon-box-icon">
-                            <span class="bi bi-building"></span>
-                            </div>
-                            <div class="icon-box-content table-cell">
-                            <div class="icon-box-title">
-                                <h5 class="icon-title">Renting Information</h5>
-                            </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-3"><span style="font-size: 12px">Hostel</span>
-                            <div class="form-group">
-                                <select name="hostel_id" id="hostels" type="text" class="form-control" required>
-                                    <option value="">Select Hostel </option>
-                                </select>
-                                <input type="hidden" id="hostel_name" name="hostel_name">
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-3"><span style="font-size: 12px">Room Category</span>
-                            <div class="form-group">
-                                <select name="category" id="category_ids" type="text" class="form-control" required>
-                                    <option value="">Select Category </option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <div class="form-group"><span style="font-size: 12px">Duration (years)</span>
-                            <input name="duration" id="number_of_years" type="number" class="form-control" placeholder="Enter no. of year(s) of rent" required>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <div class="form-group"><span style="font-size: 12px">Amount in (GH¢)</span>
-                            <input name="amount" id="amount" readonly type="number" class="form-control" placeholder="Amount" required>
-                            </div>
-                        </div>
+                      <div class="row" style="align:center">
+                          <input type="hidden" name="currency" value="GHS">
+                          <input type="hidden" name="reference" value="{{ Paystack::genTranxRef() }}"> {{-- required --}}
+                          <input type="hidden" name="quantity" id="hostel-id">
+                          <input type="hidden" name="orderID" id="category-id">
+                          <input type="hidden" name="metadata" id="duration-id" >
 
-                        <div class="col-md-6 mb-3"><span style="font-size: 12px">Payment Medium</span>
-                            <div class="form-group">
-                                <select name="pay_mode" type="text" class="form-control" required>
-                                    <option>Select Medium </option>
-                                    <option>Mobile Money</option>
-                                    <option>Bank</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-12 text-center">
-                            <br><button type="submit" class="btn btn-a"> Submit Details </button>
-                        </div>
-                    </div>
-                </form>
+                          <div class="icon-box">
+                              <div class="icon-box-icon">
+                                  <span class="bi bi-building"></span>
+                              </div>
+                              <div class="icon-box-content table-cell">
+                                  <div class="icon-box-title">
+                                      <h5 class="icon-title">Renting Information</h5>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-md-6 mb-3"><span style="font-size: 12px">Hostel</span>
+                              <div class="form-group">
+                                  <select name="hostel_id" id="hostels" type="text" class="form-control" required>
+                                      <option value="">Select Hostel </option>
+                                  </select>
+                                  <input type="hidden" id="hostel_name" name="hostel_name">
+                              </div>
+                          </div>
+                          <div class="col-md-6 mb-3"><span style="font-size: 12px">Room Category</span>
+                              <div class="form-group">
+                                  <select name="category" id="category_id" type="text" class="form-control" required>
+                                      <option value="">Select Category </option>
+                                  </select>
+                              </div>
+                          </div>
+                          <div class="col-md-6 mb-3">
+                              <div class="form-group"><span style="font-size: 12px">Duration (years)</span>
+                                  <input name="duration" id="number_of_years" type="number" class="form-control" placeholder="Enter no. of year(s) of rent" required>
+                              </div>
+                          </div>
+                          <div class="col-md-6 mb-3">
+                              <div class="form-group"><span style="font-size: 12px">E-mail</span>
+                                  <input name="email" id="email" type="email" class="form-control" required>
+                              </div>
+                          </div>
+                          <div class="col-md-6 mb-3">
+                              <div class="form-group"><span style="font-size: 12px">Amount in (GH¢)</span>
+                                  <input type="text" id="amount" readonly class="form-control">
+                                  <input type="hidden" name="amount" id="new-amount">
+                              </div>
+                          </div>
+{{--                          <div class="col-md-6 mb-3">--}}
+{{--                              <div class="form-group"><span style="font-size: 12px">Student Name</span>--}}
+{{--                                  <input type="text" id="stud-name" readonly class="form-control">--}}
+{{--                                  <input type="hidden" name="stud_name" id="stud-name">--}}
+{{--                              </div>--}}
+{{--                          </div>--}}
+                          <div class="col-md-12 text-center">
+                              <br><button type="submit" class="btn btn-a"> Pay <span id="amount-btn"></span> Now! </button>
+                          </div>
+                      </div>
+                  </form>
               </div>
             </div>
           </div>

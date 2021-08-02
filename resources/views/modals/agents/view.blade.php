@@ -17,8 +17,8 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="v_agent_name">Agent Name:</label>
-                                <span id="v_agent_name"></span>
+                                <label for="v_agent_name">Hostel Name:</label>
+                                <span id="v_hostel_name"></span>
                             </div>
                         </div>
                         <div class="col-md-12">

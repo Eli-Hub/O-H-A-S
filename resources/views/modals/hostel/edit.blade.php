@@ -4,14 +4,15 @@
     <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel1">Edit Category</h4>
+                <h4 class="modal-title" id="myModalLabel1">Edit Hostel</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-               <form method="POST" action="{{ route('hostel.update') }}" accept-charset="UTF-8" enctype="multipart/form-data">
+               <form method="POST" id="edit-hostel-form" action="{{ route('hostel.update') }}" accept-charset="UTF-8" enctype="multipart/form-data">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                   <input type="hidden" name="id" id="e_id">
                             <ul id="myTabedu1" class="tab-review-design list-unstyled mb-0">
                                 <li><a href="#basic">Basic Information</a></li>
                             </ul>
@@ -23,23 +24,34 @@
                                             <div class="form-group"> <span style="font-size: 10px"> Hostel Name </span>
                                                 <input name="hostel_name"  id="e_hostel_name" type="text" class="form-control" >
                                             </div>
-                                            <div class="form-group"><span style="font-size: 10px"> Hostel ID </span>
-                                                <input name="hostel_id" id="e_hostel_id" type="text" class="form-control">
+                                            <div class="form-group">
+                                                <span>Status </span>
+                                                            <select class="form-control" name="status" id="e_status">
+                                                                <option value="">Select option</option>
+                                                                <option value="1">Available</option>
+                                                                <option value="2">Unavailable</option>
+                                                            </select>
                                             </div>
                                             <div class="form-group"> <span style="font-size: 10px"> Location </span>
                                                 <input name="location" id="e_location"  type="text" class="form-control">
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+
                                             <div class="form-group"> <span style="font-size: 10px"> Hostel Type </span>
                                                 <input class="form-control" name="hostel_type" id="e_hostel_type" type="text">
                                             </div>
-                                            <div class="form-group"> <span style="font-size: 10px"> Agent Name </span>
-                                                <input name="agent" id="e_agent" type="text" class="form-control">
+
+                                            <div class="form-group"><span style="font-size: 10px"> Agent </span>
+                                                <select name="agent" id="e_agents" class="form-control">
+                                                    <option value="">Select Agent</option>
+                                                </select>
                                             </div>
+
                                             <div class="form-group"> <span style="font-size: 10px"> Distance from school </span>
                                                 <input name="distance" id="e_distance"  type="text" class="form-control">
                                             </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -60,7 +72,7 @@
                                      <input name="kitchen" id="e_kitchen"  type="text" class="form-control">
                                 </div>
                                 <div class="form-group"> <span style="font-size: 10px"> Washroom (Anwser: Yes/No/Other) </span>
-                                     <input name="kitchen" id="e_washroom"  type="text" class="form-control">
+                                     <input name="washroom" id="e_washroom"  type="text" class="form-control">
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -74,7 +86,9 @@
                                 </div>
 
                                  <div class="form-group"><span style="font-size: 10px"> Category ID </span>
-                                    <input name="category_id" id="e_category_id" type="number" class="form-control" >
+                                     <select class="form-control" name="category_id" id="e_category_id">
+                                         <option>Select option</option>
+                                     </select>
                                 </div>
 
                                 <div class="form-group">
@@ -87,8 +101,11 @@
                                             </div>
                                         </div>
                                 </div>
+
+
                             </div>
-                        </div><br>
+                        </div>
+                   <br>
 
                         <div class="row">
                             <div class="col-lg-12">

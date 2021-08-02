@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Agent;
+use App\Models\Hostel;
 use Illuminate\Support\Facades\Validator;
 
 use Illuminate\Http\Request;
@@ -27,13 +28,11 @@ class AgentController extends Controller
         }
 
         $agent = new Agent();
-        $agent->id = $request->id;
         $agent->agent_name = $request->agent_name;
         $agent->phone = $request->phone;
         $agent->email = $request->email;
         $agent->gender = $request->gender;
         $agent->DOB = $request->DOB;
-        $agent->hostel_id = $request->hostel_id;
         $agent->hostel_name = $request->hostel_name;
 
         if ($request->hasFile('picture')) {
@@ -52,33 +51,30 @@ class AgentController extends Controller
 
 
 
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        $v = Validator::make($request->all(), [
-            'picture' => 'required|mimes:jpg,jpeg,svg,png,gif',
-
-        ]);
-        if ($v->fails()) {
-            return response()->json(['status' => 'fail', 'error' => $v->errors()]);
-        }
-
-        $agent = Agent::find($id);
-        $agent->id = $request->id;
+        $agent = Agent::find($request->id);
         $agent->agent_name = $request->agent_name;
         $agent->phone = $request->phone;
         $agent->email = $request->email;
         $agent->gender = $request->gender;
         $agent->DOB = $request->DOB;
-        $agent->hostel_id = $request->hostel_id;
         $agent->hostel_name = $request->hostel_name;
 
 
         if ($request->hasFile('picture')) {
+            $v = Validator::make($request->all(), [
+                'picture' => 'mimes:jpg,jpeg,svg,png,gif',
+            ]);
+            if ($v->fails()) {
+                return response()->json(['status' => 'fail', 'error' => $v->errors()]);
+            }
             $file = $request->file('picture');
             $ext = $file->getClientOriginalExtension();
             $filename = time() . '.' . $ext;
             $file->move('all/app-assets/images/uploads/agents/' . str_replace(' ', '_', strtolower($request->agent_name)) , $filename);
             $agent->picture = $filename;
+
         }
 
         if ($agent->save()) {
@@ -108,6 +104,10 @@ class AgentController extends Controller
         return response()->json(['data' => $agent]);
     }
 
+    public function all_agents()
+    {
+       return response()->json(Agent::orderBy('id', 'DESC')->get());
+    }
 
     public function agent(Request $request)
     {

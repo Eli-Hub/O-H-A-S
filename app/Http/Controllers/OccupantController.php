@@ -23,7 +23,6 @@ class OccupantController extends Controller
 
 
         $occupant = new Occupant();
-        $occupant->hostel_id = $request->hostel_id;
         $occupant->name_stud = $request->name_stud;
         $occupant->phone_stud = $request->phone_stud;
         $occupant->email_stud = $request->email_stud;
@@ -34,9 +33,8 @@ class OccupantController extends Controller
         $occupant->sch_name = $request->sch_name;
         $occupant->index = $request->index;
         $occupant->room_no = $request->room_no;
-        $occupant->due_date = $request->due_date;
-        $occupant->parent = $request->parent;
-        $occupant->phone_parent = $request->phone_parent;
+        $occupant->guardian = $request->guardian;
+        $occupant->guard_phone = $request->guard_phone;
 
         if ($request->hasFile('picture')) {
             $file = $request->file('picture');
@@ -45,13 +43,12 @@ class OccupantController extends Controller
             $file->move('all/app-assets/images/uploads/occupants/' . str_replace(' ', '_', strtolower($request->name_stud)) , $filename);
             $occupant->picture = $filename;
         }
-
         $occupant->save();
         return redirect()->route('infopay');
     }
 
 
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
         $v = Validator::make($request->all(), [
             'name_stud' => 'required|string|max:255',
@@ -59,21 +56,19 @@ class OccupantController extends Controller
         if ($v->fails()) {
             return response()->json(['status' => 'fail', 'error' => $v->errors()]);
         }
-        $occupant = Occupant::find($id);
-        $occupant-> hostel_id = $request-> hostel_id;
-        $occupant-> name_stud = $request-> name_stud;
-        $occupant-> phone_stud = $request->phone_stud;
-        $occupant-> email_stud = $request->email_stud;
-        $occupant-> dob = $request-> dob;
-        $occupant-> country = $request-> country;
-        $occupant-> region = $request-> region;
-        $occupant-> residence = $request-> residence;
-        $occupant-> sch_name = $request-> sch_name;
-        $occupant-> index = $request-> index;
-        $occupant-> room_no = $request-> room_no;
-        $occupant-> due_date = $request-> due_date;
-        $occupant-> parent = $request-> parent;
-        $occupant-> phone_parent = $request->phone_parent;
+        $occupant = Occupant::find($request->id);
+        $occupant->name_stud = $request->name_stud;
+        $occupant->phone_stud = $request->phone_stud;
+        $occupant->email_stud = $request->email_stud;
+        $occupant->dob = $request->dob;
+        $occupant->country = $request->country;
+        $occupant->region = $request->region;
+        $occupant->residence = $request->residence;
+        $occupant->sch_name = $request->sch_name;
+        $occupant->index = $request->index;
+        $occupant->room_no = $request->room_no;
+        $occupant->guardian = $request->guardian;
+        $occupant->guard_phone = $request->guard_phone;
 
 
         if ($request->hasFile('picture')) {
@@ -85,7 +80,7 @@ class OccupantController extends Controller
         }
 
         $occupant->update();
-        return redirect()->route('occupants');
+        return redirect()->route('occupant');
     }
 
 

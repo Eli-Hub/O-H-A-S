@@ -3,12 +3,12 @@
 @section('title', 'Contacts')
 
 @section('content')
-{{-- 
+{{--
 @include('modals.payment.add')
 @include('modals.payment.view')
 @include('modals.payment.edit') --}}
 
- 
+
         <div class="content-wrapper">
             <div class="content-header row">
                 <div class="content-header-left col-md-9 col-12 mb-2">
@@ -47,7 +47,7 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                   
+
                                 </div>
                                 <div class="card-content">
                                     <div class="card-body card-dashboard">
@@ -86,7 +86,7 @@
                                                             <td>{{$message->name}}</td>
                                                             <td>{{$message->email}}</td>
                                                             <td> {{$message->message}}</td>
-                                                            <td><a href="{{route('contact.destroy', [$message->id])}}" title="Delete" class="btn btn-warning btn-outline btn-sm"  ><i class="fa fa-trash-o" aria-hidden="true" ></i></a></td>
+                                                            <td><a href="{{route('message.destroy', [$message->id])}}" title="Delete" class="btn btn-warning btn-outline btn-sm"  ><i class="fa fa-trash-o" aria-hidden="true" ></i></a></td>
                                                         </tr>
                                                     @endforeach
                                                     @endif

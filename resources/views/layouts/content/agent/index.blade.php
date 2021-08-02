@@ -56,30 +56,22 @@
                                             <table class="table agent-configuration table-hover table-hover-animation">
                                                 <thead>
                                                     <tr>
+                                                        <th>ID</th>
                                                         <th>Image</th>
-                                                        <th>Agent ID</th>
                                                         <th>Name</th>
                                                         <th>Phone</th>
-                                                        {{-- <th>Email</th> --}}
-                                                        {{-- <th>Gender</th> --}}
-                                                        {{-- <th>Birth Date</th> --}}
                                                         <th>Hostel ID</th>
-                                                        <th>Hostel Name</th>
                                                         <th>Action</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody></tbody>
                                                 <tfoot>
                                                     <tr>
+                                                        <th>ID</th>
                                                         <th>Image</th>
-                                                        <th>Agent ID</th>
                                                         <th>Name</th>
                                                         <th>Phone</th>
-                                                        {{-- <th>Email</th> --}}
-                                                        {{-- <th>Gender</th> --}}
-                                                        {{-- <th>Birth Date</th> --}}
                                                         <th>Hostel ID</th>
-                                                        <th>Hostel Name</th>
                                                         <th>Action</th>
                                                     </tr>
                                                 </tfoot>

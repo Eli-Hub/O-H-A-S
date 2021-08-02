@@ -82,7 +82,7 @@
             </div>
 
               <div class="col-md-10">
-                <form action="{{route('userInfo')}}" method='POST'>
+                <form action="{{route('userInfo')}}" method= "POST" accept-charset="UTF-8" enctype="multipart/form-data">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                   <div class="row" style="align:center">
@@ -138,12 +138,12 @@
                       </div>
                       <div class="col-md-6 mb-3"><span style="font-size: 12px">Parent/Guardian</span>
                         <div class="form-group">
-                          <input name="parent" type="text" class="form-control" placeholder="Enter Full name" required>
+                          <input name="guardian" type="text" class="form-control" placeholder="Enter Full name" required>
                         </div>
                       </div>
                       <div class="col-md-6 mb-3">
                         <div class="form-group"><span style="font-size: 12px">Guardian's Phone Number</span>
-                          <input name="phone_parent" type="text" class="form-control" placeholder="Phone no. of parent" required><br>
+                          <input name="guard_phone" type="text" class="form-control" placeholder="Phone no. of parent" required><br>
                         </div>
                     </div>
                       <div class="col-md-6 mb-3">
@@ -163,7 +163,7 @@
                         </div>
                     </div>
 
-                    
+
 
                     <div class="col-md-12 text-center">
                         <br><button type="submit" class="btn btn-a"> Submit Details </button>

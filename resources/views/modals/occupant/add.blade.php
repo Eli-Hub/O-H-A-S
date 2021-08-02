@@ -22,7 +22,7 @@
                                 <div class="review-content-section">
                                     <div class="row">
                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                            <div class="form-group">
+                                            <div class="form-group"> <span style="font-size: 10px"> Hostel Name </span>
                                                 <input name="hostel_name" type="text" class="form-control" placeholder="Hostel Name">
                                             </div>
                                             <div class="form-group">

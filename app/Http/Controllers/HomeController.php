@@ -96,9 +96,12 @@ class HomeController extends Controller
     public function subscribe()
     {
         $subs = Contact::all();
+        return view('layouts.content.contact.index', compact('subs'));
+    }
+    public function message()
+    {
         $messages = AgentMessage::all();
-        return view('layouts.content.contact.index', compact('subs','messages'));
-
+        return view('layouts.content.contact.index', compact('messages'));
     }
 
     public function calender()
@@ -109,7 +112,7 @@ class HomeController extends Controller
     public function adminIndex()
     {
         $payments=Payment::all();
-        return view('admin.index', compact('payments'));
+        return view('layouts.content.dashboard.index', compact('payments'));
     }
 
 

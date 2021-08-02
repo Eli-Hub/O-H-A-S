@@ -52,27 +52,25 @@
                                                 <thead>
                                                     <tr>
                                                         <th>ID</th>
-                                                        <th>Student ID</th>
                                                         <th>Hostel Name</th>
                                                         <th>Category</th>
                                                         <th>Duration</th>
                                                         <th>Amount</th>
                                                         <th>Payment Date</th>
-                                                        <th>Payment Mode</th>
+                                                        <th>Due Date</th>
                                                         <th>Action</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody></tbody>
                                                 <tfoot>
                                                     <tr>
-                                                       <th>ID</th>
-                                                        <th>Student ID</th>
+                                                        <th>ID</th>
                                                         <th>Hostel Name</th>
                                                         <th>Category</th>
                                                         <th>Duration</th>
                                                         <th>Amount</th>
                                                         <th>Payment Date</th>
-                                                        <th>Payment Mode</th>
+                                                        <th>Due Date</th>
                                                         <th>Action</th>
                                                     </tr>
                                                 </tfoot>

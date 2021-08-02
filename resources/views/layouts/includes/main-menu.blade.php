@@ -16,15 +16,6 @@
                     @if(Auth::user()->is_admin==1) Admin @else Agent @endif Dashboard</span></a>
                 </li>
                 @if(Auth::user()->is_admin==1)
-                <li class=" navigation-header"><span>Agents Details</span>
-                </li>
-
-                <li class=" nav-item"><a href="#"><i class="feather icon-user"></i><span class="menu-title" data-i18n="User">Agents</span></a>
-                    <ul class="menu-content">
-                        <li><a href="{{ route('adminagent') }}"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="List">List</span></a>
-                        </li>
-                    </ul>
-                </li>
 
                 <li class=" navigation-header"><span>Hostel Facility</span>
                 </li>
@@ -33,6 +24,16 @@
                         <li><a href="{{ route('hostel') }}"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="List View">List</span></a>
                         </li>
                     </ul>
+                </li>
+                    <li class=" navigation-header"><span>Agents Details</span>
+                    </li>
+
+                    <li class=" nav-item"><a href="#"><i class="feather icon-user"></i><span class="menu-title" data-i18n="User">Agents</span></a>
+                        <ul class="menu-content">
+                            <li><a href="{{ route('adminagent') }}"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="List">List</span></a>
+                            </li>
+                        </ul>
+                    </li>
                 @else
                   <li class=" navigation-header"><span>Agent's Hostel</span>
                 </li>
@@ -44,18 +45,19 @@
                 </li>
                 <li class=" nav-item"><a href="#"><i class="feather icon-list"></i><span class="menu-title" data-i18n="Data List">Payments</span></a>
                     <ul class="menu-content">
-                        <li><a href="{{ route('pay') }}"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="List View">List</span></a>
+                        <li><a href="{{ route('adminpay') }}"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="List View">List</span></a>
                         </li>
                     </ul>
                 </li>
                 </li>
                 @endif
+
                 <li class=" navigation-header"><span>Subscribers</span>
-                     <li class=" nav-item"><a href="{{route('sub')}}"><i class="feather icon-list"></i><span class="menu-title" data-i18n="Data List">@if(Auth::user()->is_admin==1)Admin @else Agent @endif Contacts  </span></a>
+                     <li class=" nav-item">@if(Auth::user()->is_admin==1)<a href="{{route('sub')}}"><i class="feather icon-list"></i><span class="menu-title" data-i18n="Data List">Admin @else <a href="{{route('message')}}"><i class="feather icon-list"></i><span class="menu-title" data-i18n="Data List">Agent @endif Contacts  </span></a>
                     </li>
                 </li>
 
-
+                @if(Auth::user()->is_admin==1)
                  <li class=" navigation-header"><span>Settings</span>
                 </li>
 
@@ -65,7 +67,7 @@
                         </li>
                     </ul>
                 </li>
-
+            @endif
             </ul>
         </div>
     </div>

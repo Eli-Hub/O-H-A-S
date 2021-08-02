@@ -49,8 +49,6 @@ function deleteAlert(url, id) {
                 data: { _token: _token },
                 success: function(data) {
                     toast('success', data.message)
-                    category_list.ajax.reload()
-                    toast('success', data.message)
                     refresh()
                     Swal.fire({
                         type: "success",
@@ -94,6 +92,7 @@ $(document).ready(function() {
                     toAppend += `<option value="${v.id}">${v.category_name}</option>`
                 })
                 category_id.empty().prepend(toAppend)
+                $('#hostel-id').val(hostel_id)
             }
         })
     })
@@ -110,6 +109,12 @@ $(document).ready(function() {
                     $.each(data, function (k, v) {
                         $('#'+k).val(v)
                     })
+                    $('#new-amount').val(data.amount * 100)
+                    $('#stud-name').val(data.stud_name)
+                    $('#duration-id').val(data.number_of_years)
+                    $('#amount-btn').html('GHS '+data.amount)
+                    $('#category-id').val(id)
+                    $('#amount').val(data.amount.toFixed(2, 2))
                 }
             }
         })
@@ -123,6 +128,21 @@ $(document).ready(function() {
             let hostels = $('#hostels')
             $.each(data, function (k,v) {
                 hostels.append(`<option value="${v.id}">${v.hostel_name}</option>`)
+                $('#hostel_id').append(`<option value="${v.id}">${v.hostel_name}</option>`)
+                $('#e_hostel_name').append(`<option value="${v.id}">${v.hostel_name}</option>`)
+            })
+        }
+    })
+    $.ajax({
+        url: '/admin/allagents',
+        type: 'get',
+        dataType: 'json',
+        success: function (data) {
+            let agents = $('#agents')
+            $.each(data, function (k,v) {
+                agents.append(`<option value="${v.id}">${v.agent_name}</option>`)
+                $('#agents_id').append(`<option value="${v.id}">${v.agent_name}</option>`)
+                $('#e_agents').append(`<option value="${v.id}">${v.agent_name}</option>`)
             })
         }
     })
@@ -133,8 +153,10 @@ $(document).ready(function() {
         dataType: 'json',
         success: function (data) {
             let category_id = $('#category_id')
+            let e_category_id = $('#e_category_id')
             $.each(data, function (k,v) {
                 category_id.append(`<option value="${v.id}">${v.category_name}</option>`)
+                e_category_id.append(`<option value="${v.id}">${v.category_name}</option>`)
             })
         }
     })
@@ -188,7 +210,7 @@ $(document).ready(function() {
                     render: function(data) {
                         return `
                                 <div class="">
-                                <a title="Show" class="btn btn-outline-info btn-sm" onclick="view_category('${data.id}')" class="pd-setting-ed"><i class="fa fa-eye" aria-hidden="true"></i></a>
+<!--                                <a title="Show" class="btn btn-outline-info btn-sm" onclick="view_category('${data.id}')" class="pd-setting-ed"><i class="fa fa-eye" aria-hidden="true"></i></a>-->
                                 <a title="Edit" class="btn btn-outline-primary btn-sm" onclick="edit_category('${data.id}')" class="pd-setting-ed"><i class="fa fa-edit" aria-hidden="true"></i></a>
                                 <a title="Delete" class="btn btn-outline-danger btn-sm" onclick="deleteAlert('/admin/delete/', '${data.id}')" ><i class="fa fa-trash-o" aria-hidden="true" ></i></a>
                                 </div>
@@ -325,7 +347,9 @@ $(document).ready(function() {
             ajax: '/admin/agents',
             processing: true,
             order: ['0', 'asc'],
-            columns: [{
+            columns: [
+                { 'data': 'id' },
+                {
                     'data': null,
                     render: function(data) {
                         return `
@@ -334,10 +358,8 @@ $(document).ready(function() {
                             `
                     }
                 },
-                { 'data': 'id' },
                 { 'data': 'agent_name' },
                 { 'data': 'phone' },
-                { 'data': 'hostel_id' },
                 { 'data': 'hostel_name' },
                 {
                     'data': null,
@@ -411,6 +433,9 @@ function edit_agent(id) {
             if (data) {
                 $.each(data, function(k, v) {
                     $('#e_' + k).val(v)
+                    $('#e_'+k).filter(function () {
+                        return $(this).val() === $('#e_'+k).val()
+                    }).attr('selected', true)
                 })
             }
         }
@@ -478,7 +503,6 @@ $(document).ready(function() {
                     }
                 },
 
-                { 'data': 'hostel_id' },
                 { 'data': 'hostel_name' },
                 { 'data': 'location' },
                 { 'data': 'hostel_type' },
@@ -555,6 +579,10 @@ function edit_hostel(id) {
             if (data) {
                 $.each(data, function(k, v) {
                     $('#e_' + k).val(v)
+
+                    $('#e_'+k).filter(function () {
+                        return $(this).val() === $('e_'+k).val()
+                    }).attr('selected', true)
                 })
             }
         }
@@ -616,13 +644,13 @@ $(document).ready(function() {
             order: ['0', 'asc'],
             columns: [
                 { 'data': 'id' },
-                { 'data': 'stud_id' },
                 { 'data': 'hostel_name' },
                 { 'data': 'category' },
                 { 'data': 'duration' },
                 { 'data': 'amount' },
                 { 'data': 'created_at' },
-                { 'data': 'pay_mode' },
+                { 'data': 'due_date' },
+
                 {
                     'data': null,
                     render: function(data) {
@@ -758,18 +786,16 @@ $(document).ready(function() {
                     'data': null,
                     render: function(data) {
                         return `
-                            <a href="${images_path('profile/user-uploads/' + data.picture)}" data-fancybox>
-                                <img src="${images_path('profile/user-uploads/' + data.picture)}" alt=""
-                                style="width: 60px; height: 60px; border-radius: 100px" class="img-circle m-b">
-                            </a>
+                             <img src="${images_path('uploads/occupants/'+data.name_stud.toLowerCase().replace(' ', '_')+'/'+data.picture)}"  data-fancybox="gallery" alt=""
+                            style="width: 60px; height: 60px; border-radius: 100px">
+
                             `
                     }
                 },
-                { 'data': 'hostel.hostel_name' },
                 { 'data': 'name_stud' },
                 { 'data': 'phone_stud' },
-                { 'data': 'email_stud' },
-                { 'data': 'due_date' },
+                { 'data': 'room_no' },
+                { 'data': 'index' },
                 {
                     'data': null,
                     render: function(data) {

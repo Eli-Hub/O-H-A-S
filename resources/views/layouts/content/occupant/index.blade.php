@@ -5,8 +5,8 @@
 @section('content')
 
 {{-- @include('modals.occupant.add') --}}
-{{-- @include('modals.occupant.view')
-@include('modals.occupant.edit') --}}
+ @include('modals.occupant.view')
+@include('modals.occupant.edit')
 
         <div class="content-wrapper">
             <div class="content-header row">
@@ -53,11 +53,10 @@
                                                     <tr>
                                                         <th>ID</th>
                                                         <th>Picture</th>
-                                                        <th>Hostel Name</th>
                                                         <th>Student Name</th>
                                                         <th>Phone</th>
-                                                        <th>Email</th>
-                                                        <th>Due Date</th>
+                                                        <th>Room No</th>
+                                                        <th>Index</th>
                                                         <th>Action</th>
                                                     </tr>
                                                 </thead>
@@ -66,11 +65,10 @@
                                                     <tr>
                                                         <th>ID</th>
                                                         <th>Picture</th>
-                                                        <th>Hostel Name</th>
                                                         <th>Student Name</th>
                                                         <th>Phone</th>
-                                                        <th>Email</th>
-                                                        <th>Due Date</th>
+                                                        <th>Room No</th>
+                                                        <th>Index</th>
                                                         <th>Action</th>
                                                     </tr>
                                                 </tfoot>

@@ -13,7 +13,7 @@
             </div>
             <div class="modal-body">
                  <form method="POST" id="add-hostel-form" action="{{ route('hostel.create') }}" enctype="multipart/form-data">
-                        @csrf
+                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                             <ul id="myTabedu1" class="tab-review-design list-unstyled mb-0">
                                 <li><a href="#basic">Basic Information</a></li>
@@ -23,30 +23,38 @@
                                 <div class="review-content-section">
                                     <div class="row">
                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                            <div class="form-group">
+                                            <div class="form-group"><span style="font-size: 10px"> Hostel Name </span>
                                                 <input name="hostel_name" type="text" class="form-control" placeholder="Hostel Name">
                                             </div>
-                                            <div class="form-group">
-                                                <input name="hostel_id" type="text" class="form-control" placeholder="Hostel ID">
+                                            <div class="form-group"> <span style="font-size: 10px"> Location </span>
+                                                <input name="location" type="text" class="form-control" placeholder="Location">
                                             </div>
                                             <div class="form-group">
-                                                <input name="location" type="text" class="form-control" placeholder="Location">
+                                                <span>Status </span>
+                                                <select class="form-control" name="status">
+                                                    <option value="">Select option</option>
+                                                    <option value="1">Available</option>
+                                                    <option value="2">Unavailable</option>
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                            <div class="form-group">
+                                            <div class="form-group"><span style="font-size: 10px"> Hostel Type </span>
                                                 <select class="form-control custom-select-value" name="hostel_type" type="text">
-                                                    <option>Hostel Type</option>
+                                                    <option>Select Type</option>
                                                     <option>Mixed</option>
                                                     <option>Ladies Only</option>
                                                     <option>Gents Only</option>
                                                 </select>
                                             </div>
-                                            <div class="form-group">
-                                                <input name="agent" type="text" class="form-control" placeholder="Agent Name">
+                                            <div class="form-group"><span style="font-size: 10px"> Agent </span>
+                                                <select name="agent" id="agents_id" class="form-control">
+                                                    <option value="">Select Agent</option>
+                                                </select>
                                             </div>
-                                            <div class="form-group">
-                                                <input name="distance" type="text" class="form-control" placeholder="Hostel Distance from School"required>
+
+                                            <div class="form-group"> <span style="font-size: 10px"> Distance </span>
+                                                <input name="distance" type="text" class="form-control" placeholder="Distance from School"required>
                                             </div>
                                         </div>
                                     </div>
@@ -187,18 +195,18 @@
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 
-                                <div class="form-group">
+                                <div class="form-group"> <span style="font-size: 10px"> Capacity </span>
                                     <input name="capacity" type="number" class="form-control" placeholder="Hostel Capacity">
                                 </div>
 
-                                <div class="form-group">
+                                <div class="form-group"> <span style="font-size: 10px"> Number of Rooms </span>
                                     <input name="no_of_rooms" type="number" class="form-control" placeholder="Number of Rooms">
                                 </div>
 
                                  <div class="form-group">
-                                     <div class="form-group">
+                                     <div class="form-group"> <span style="font-size: 10px"> Category </span>
                                          <select class="form-control custom-select-value select2" name="category_id" id="category_id">
-                                             <option value="">Select category</option>
+                                             <option>Select category</option>
                                          </select>
                                      </div>
                                 </div>
