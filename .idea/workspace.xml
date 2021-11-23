@@ -2,139 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fddbeeda-9a0a-436f-afcb-103d7a482fcd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/config/paystack.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_08_19_000000_create_failed_jobs_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_05_19_221235_create_contacts_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_05_20_124937_create_agents_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_05_20_125000_create_hostels_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_05_20_130337_create_payments_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_06_01_124201_create_occupants_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_06_04_143330_create_sessions_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_06_09_225315_create_agent_messages_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_06_12_131023_create_categories_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/hostel.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/all/app-assets/images/uploads/agents/barry_ortega/1626810285.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/all/app-assets/images/uploads/agents/barry_ortega/1626810370.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/all/app-assets/images/uploads/agents/barry_ortega/1627716664.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/all/app-assets/images/uploads/agents/barry_ortega/1627716670.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/all/app-assets/images/uploads/agents/emefa_abigail/1627717630.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/all/app-assets/images/uploads/agents/emefa_abigail_senyo/1626773987.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/all/app-assets/images/uploads/agents/emmanuel_hodo/1627055068.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/all/app-assets/images/uploads/hostels/5-star_hostel/1627717388.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/all/app-assets/images/uploads/hostels/adaklu_hostel/1627717561.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/all/app-assets/images/uploads/hostels/chaney_wagner/1626029161.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/all/app-assets/images/uploads/hostels/chaney_wagner/1626029163.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/all/app-assets/images/uploads/hostels/chaney_wagner/1626029164.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/all/app-assets/images/uploads/hostels/fletcher_guzman/1626029102.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/all/app-assets/images/uploads/hostels/fletcher_guzman/1626029104.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/all/app-assets/images/uploads/hostels/fletcher_guzman/1626029105.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/all/app-assets/images/uploads/hostels/fletcher_guzman/1626029123.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/all/app-assets/images/uploads/hostels/fletcher_guzman/1626029124.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/all/app-assets/images/uploads/hostels/fletcher_guzman/1626029125.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/all/app-assets/images/uploads/hostels/freedom_hostel/1626027775.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/all/app-assets/images/uploads/hostels/freedom_hostel/1626027777.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/all/app-assets/images/uploads/hostels/freedom_hostel/1626027999.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/all/app-assets/images/uploads/hostels/freedom_hostel/1626028000.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/all/app-assets/images/uploads/hostels/freedom_hostel/1626028001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/all/app-assets/images/uploads/hostels/freedom_hostel/1626028378.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/all/app-assets/images/uploads/hostels/freedom_hostel/1626028381.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/all/app-assets/images/uploads/hostels/freedom_hostel/1626028382.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/all/app-assets/images/uploads/hostels/freedom_hostel/1626028515.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/all/app-assets/images/uploads/hostels/freedom_hostel/1626028517.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/all/app-assets/images/uploads/hostels/freedom_hostel/1626028701.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/all/app-assets/images/uploads/hostels/freedom_hostel/1626028703.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/all/app-assets/images/uploads/hostels/freedom_hostel/1626028704.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/all/app-assets/images/uploads/hostels/freedom_hostel/1626028961.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/all/app-assets/images/uploads/hostels/freedom_hostel/1626808352.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/all/app-assets/images/uploads/hostels/freedom_hostel/1627104708.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/all/app-assets/images/uploads/hostels/freedom_hostel/1627715835.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/all/app-assets/images/uploads/hostels/freedom_hostel/1627715838.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/all/app-assets/images/uploads/hostels/freedom_hostel/1627716105.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/all/app-assets/images/uploads/hostels/freedom_hostel/1627716136.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/all/app-assets/images/uploads/hostels/freedom_hostel/1627716203.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/all/app-assets/images/uploads/hostels/freedom_hostel/1627717020.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/all/app-assets/images/uploads/hostels/gay_wise/1626807920.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/all/app-assets/images/uploads/hostels/gay_wise/1626807921.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/all/app-assets/images/uploads/hostels/gay_wise/1626808134.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/all/app-assets/images/uploads/hostels/gay_wise/1626808221.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/all/app-assets/images/uploads/hostels/htu_hostel/1627105060.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/all/app-assets/images/uploads/hostels/patricia_weiss/1626028989.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/all/app-assets/images/uploads/hostels/patricia_weiss/1626028991.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/all/app-assets/images/uploads/hostels/patricia_weiss/1626028992.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/all/app-assets/images/uploads/occupants/alice_kayston/1627894508.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/all/app-assets/images/uploads/occupants/emefa_abigail/1627107622.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/all/app-assets/images/uploads/occupants/emefa_abigail_senyo/1627065692.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/all/app-assets/images/uploads/occupants/jane_doe/1627102900.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/userassets/img/vid.mp4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/hostelApp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/hostelApp.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AgentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AgentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HostelController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HostelController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MessageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MessageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OccupantController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OccupantController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PaymentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PaymentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Payment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Payment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/29cdce61696742282c08d0145384df48.json.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/3bd0c727502355915bd278ab93ec2574.json.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/9c0c99425cb24c38bd5f7c91e5d31c02.json.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/9f3185de8ea90ece545564cbcd596f35.json.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/befa3a3572faa51129392be518b094ee.json.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/dba64e9de72d19749c3f8a0d3ebbb894.json.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/vue-loader/.vscode/launch.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/vue-style-loader/.github/ISSUE_TEMPLATE.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/vue-style-loader/.github/PULL_REQUEST_TEMPLATE.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/all/app-assets/images/uploads/agents/emmanuel_hodo/1624257693.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/all/app-assets/images/uploads/agents/emmanuel_hodo/1627717435.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/all/app-assets/images/uploads/agents/emmanuel_hodo/1624257735.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/all/app-assets/images/uploads/agents/emmanuel_hodo/1624257742.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/all/app-assets/images/uploads/agents/emmanuel_hodo/1624257806.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/all/app-assets/images/uploads/agents/faith_ananga/1624255569.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/all/app-assets/images/uploads/occupants/jaden_johnson/1627715365.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/all/app-assets/images/uploads/agents/faith_ananga/1624256728.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/all/app-assets/images/uploads/agents/emefa_abigail_senyo/1626773986.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/all/app-assets/images/uploads/hostels/5-star_hostel/1624256362.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/all/app-assets/images/uploads/hostels/freedom_hostel/1624217307.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/all/app-assets/images/uploads/hostels/5-star_hostel/1627104836.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/all/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/all/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/content/agent/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/content/agent/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/content/calender/calender.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/content/calender/calender.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/content/category/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/content/category/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/content/contact/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/content/contact/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/content/dashboard/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/content/dashboard/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/content/hostel/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/content/hostel/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/content/occupant/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/content/occupant/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/content/payment/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/content/payment/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/includes/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/includes/footer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/includes/main-menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/includes/main-menu.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/includes/navbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/includes/navbar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/modals/agents/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/modals/agents/add.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/modals/agents/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/modals/agents/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/modals/agents/view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/modals/agents/view.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/modals/category/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/modals/category/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/modals/hostel/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/modals/hostel/add.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/modals/hostel/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/modals/hostel/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/modals/hostel/view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/modals/hostel/view.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/modals/occupant/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/modals/occupant/add.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/modals/occupant/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/modals/occupant/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/modals/occupant/view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/modals/occupant/view.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/pay.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/pay.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/payinfo.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/payinfo.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/singleproperty.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/singleproperty.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/InstalledVersions.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/InstalledVersions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -272,6 +140,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../dollysam" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -291,6 +160,15 @@
       <updated>1627714703618</updated>
       <workItem from="1627714773875" duration="6353000" />
       <workItem from="1627890889681" duration="3850000" />
+      <workItem from="1636914263099" duration="5043000" />
+      <workItem from="1636958637267" duration="2890000" />
+      <workItem from="1636987161235" duration="3925000" />
+      <workItem from="1637000344789" duration="1219000" />
+      <workItem from="1637212190122" duration="88000" />
+      <workItem from="1637228604465" duration="1144000" />
+      <workItem from="1637580933994" duration="2130000" />
+      <workItem from="1637591022907" duration="597000" />
+      <workItem from="1637659891034" duration="391000" />
     </task>
     <servers />
   </component>
