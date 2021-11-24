@@ -1,3 +1,11 @@
+![admin2](https://user-images.githubusercontent.com/52346616/143221598-950cfd96-aff4-4c91-bfe8-bf03d15d0738.PNG)
+![admin3](https://user-images.githubusercontent.com/52346616/143221607-d1873dc9-770b-4a99-95dd-2072e9c82923.PNG)
+![agent2](https://user-images.githubusercontent.com/52346616/143221609-26969676-23d8-402e-bf4d-4b04a42f6bb7.PNG)
+![front1](https://user-images.githubusercontent.com/52346616/143221611-c721bf2c-52c0-4ede-8353-5e432a7b91a0.PNG)
+![front2](https://user-images.githubusercontent.com/52346616/143221636-9c1ed743-1eb2-424d-83cd-b88fc03fb6a2.PNG)
+![front3](https://user-images.githubusercontent.com/52346616/143221641-3daf3f9f-df66-4e8f-9d49-972fa6c8f9ff.PNG)
+![front4](https://user-images.githubusercontent.com/52346616/143221647-1c22260a-d42a-4ee4-8167-27c9bf35edd6.PNG)
+![front5](https://user-images.githubusercontent.com/52346616/143221651-51e89625-3a03-4f6b-83ed-e3f63f9a94c8.PNG)
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
