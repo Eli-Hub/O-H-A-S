@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Hostel;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
+use App\Services\PrivateImageStorage;
 
 class HostelController extends Controller
 {
@@ -18,11 +19,11 @@ class HostelController extends Controller
 
 
 
-    public function create(Request $request)
+    public function create(Request $request, PrivateImageStorage $images)
     {
         $v = Validator::make($request->all(), [
             'hostel_name' => 'required|string|max:255',
-            'picture' => 'required|mimes:jpg,jpeg,svg,png,gif'
+            'picture' => 'required|image|mimes:jpg,jpeg,png,gif,webp|max:5120',
         ]);
         if ($v->fails()) {
             return response()->json(['status' => 'fail', 'error' => $v->errors()]);
@@ -44,11 +45,7 @@ class HostelController extends Controller
 
 
         if ($request->hasFile('picture')) {
-            $file = $request->file('picture');
-            $ext = $file->getClientOriginalExtension();
-            $filename = time() . '.' . $ext;
-            $file->move('all/app-assets/images/uploads/hostels/' . str_replace(' ', '_', strtolower($request->hostel_name)) , $filename);
-            $hostel->picture = $filename;
+            $hostel->picture = $images->store($request->file('picture'), 'hostels');
         }
 
         if ($hostel->save()) {
@@ -58,7 +55,7 @@ class HostelController extends Controller
     }
 
 
-    public function update(Request $request)
+    public function update(Request $request, PrivateImageStorage $images)
     {
         $v = Validator::make($request->all(), [
             'hostel_name' => 'required|string|max:255',
@@ -84,16 +81,12 @@ class HostelController extends Controller
 
         if ($request->hasFile('picture')) {
             $v = Validator::make($request->all(), [
-                'picture' => 'mimes:jpg,jpeg,svg,png,gif'
+                'picture' => 'image|mimes:jpg,jpeg,png,gif,webp|max:5120',
             ]);
             if ($v->fails()) {
                 return response()->json(['status' => 'fail', 'error' => $v->errors()]);
             }
-            $file = $request->file('picture');
-            $ext = $file->getClientOriginalExtension();
-            $filename = time() . '.' . $ext;
-            $file->move('all/app-assets/images/uploads/hostels/' . str_replace(' ', '_', strtolower($request->hostel_name)) , $filename);
-            $hostel->picture = $filename;
+            $hostel->picture = $images->store($request->file('picture'), 'hostels');
         }
 
         if ($hostel->save()) {

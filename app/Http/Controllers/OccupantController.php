@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Occupant;
+use App\Services\PrivateImageStorage;
 
 class OccupantController extends Controller
 {
@@ -12,10 +13,11 @@ class OccupantController extends Controller
         return view('layouts.content.occupant.index');
     }
 
-    public function create(Request $request)
+    public function create(Request $request, PrivateImageStorage $images)
     {
         $v = Validator::make($request->all(), [
             'name_stud' => 'required|string|max:255',
+            'picture' => 'nullable|image|mimes:jpg,jpeg,png,gif,webp|max:5120',
         ]);
         if ($v->fails()) {
             return response()->json(['status' => 'fail', 'error' => $v->errors()]);
@@ -37,21 +39,18 @@ class OccupantController extends Controller
         $occupant->guard_phone = $request->guard_phone;
 
         if ($request->hasFile('picture')) {
-            $file = $request->file('picture');
-            $ext = $file->getClientOriginalExtension();
-            $filename = time() . '.' . $ext;
-            $file->move('all/app-assets/images/uploads/occupants/' . str_replace(' ', '_', strtolower($request->name_stud)) , $filename);
-            $occupant->picture = $filename;
+            $occupant->picture = $images->store($request->file('picture'), 'occupants');
         }
         $occupant->save();
         return redirect()->route('infopay');
     }
 
 
-    public function update(Request $request)
+    public function update(Request $request, PrivateImageStorage $images)
     {
         $v = Validator::make($request->all(), [
             'name_stud' => 'required|string|max:255',
+            'picture' => 'nullable|image|mimes:jpg,jpeg,png,gif,webp|max:5120',
         ]);
         if ($v->fails()) {
             return response()->json(['status' => 'fail', 'error' => $v->errors()]);
@@ -72,11 +71,7 @@ class OccupantController extends Controller
 
 
         if ($request->hasFile('picture')) {
-            $file = $request->file('picture');
-            $ext = $file->getClientOriginalExtension();
-            $filename = time() . '.' . $ext;
-            $file->move('all/app-assets/images/uploads/occupants/' . str_replace(' ', '_', strtolower($request->name_stud)) , $filename);
-            $occupant->picture = $filename;
+            $occupant->picture = $images->store($request->file('picture'), 'occupants');
         }
 
         $occupant->update();

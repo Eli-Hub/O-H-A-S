@@ -292,6 +292,15 @@ function images_path(assets_path) {
     return  base_url + '/all/app-assets/images/' + assets_path
 }
 
+function uploaded_image_path(collection, name, picture) {
+    let base_url = $('#base_url').val()
+    if (typeof picture === 'string' && picture.startsWith('private:')) {
+        return base_url + '/admin/uploads/' + collection + '/' + encodeURIComponent(picture.substring(8))
+    }
+
+    return images_path('uploads/' + collection + '/' + name.toLowerCase().replace(' ', '_') + '/' + picture)
+}
+
 function load_image(image, image_loader, target = '#') {
     if (target === '.') {
         target = '.'
@@ -353,7 +362,7 @@ $(document).ready(function() {
                     'data': null,
                     render: function(data) {
                         return `
-                              <img src="${images_path('uploads/agents/'+data.agent_name.toLowerCase().replace(' ', '_')+'/'+data.picture)}"  data-fancybox="gallery" alt=""
+                              <img src="${uploaded_image_path('agents', data.agent_name, data.picture)}"  data-fancybox="gallery" alt=""
                             style="width: 60px; height: 60px; border-radius: 100px">
                             `
                     }
@@ -497,7 +506,7 @@ $(document).ready(function() {
                     'data': null,
                     render: function(data) {
                         return `
-                            <img src="${images_path('uploads/hostels/'+data.hostel_name.toLowerCase().replace(' ', '_')+'/'+data.picture)}"  data-fancybox="gallery" alt=""
+                            <img src="${uploaded_image_path('hostels', data.hostel_name, data.picture)}"  data-fancybox="gallery" alt=""
                             style="width: 60px; height: 60px; border-radius: 100px">
                             `
                     }
@@ -786,7 +795,7 @@ $(document).ready(function() {
                     'data': null,
                     render: function(data) {
                         return `
-                             <img src="${images_path('uploads/occupants/'+data.name_stud.toLowerCase().replace(' ', '_')+'/'+data.picture)}"  data-fancybox="gallery" alt=""
+                             <img src="${uploaded_image_path('occupants', data.name_stud, data.picture)}"  data-fancybox="gallery" alt=""
                             style="width: 60px; height: 60px; border-radius: 100px">
 
                             `
